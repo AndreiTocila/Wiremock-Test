@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/posts",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(@.title == 'foo')]" },
+      { "matchesJsonPath": "$[?(@.body == 'bar')]" },
+      { "matchesJsonPath": "$[?(@.userId == 1)]" }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "body": "{\n        \"userId\": 1,\n        \"id\": 101,\n        \"title\": \"foo\",\n        \"body\": \"bar\"\n    }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

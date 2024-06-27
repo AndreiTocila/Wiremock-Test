@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPathTemplate": "/posts/{id}",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(@.title == 'foo')]" },
+      { "matchesJsonPath": "$[?(@.body == 'bar')]" },
+      { "matchesJsonPath": "$[?(@.userId == 1)]" },
+      { "matchesJsonPath": "$[?(@.id == 1)]" }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\n        \"userId\": 1,\n        \"id\": 1,\n        \"title\": \"foo\",\n        \"body\": \"bar\"\n    }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "scenarioName": "Verification of the deletion of a post",
+  "requiredScenarioState": "Started",
+  "newScenarioState": "Post Deleted",
+  "request": {
+    "method": "DELETE",
+    "urlPathTemplate": "/posts/{id}",
+    "pathParameters": {
+      "id": {
+        "equalTo": "1"
+      }
+    }
+  },
+  "response": {
+    "status": 200
+  }
+}
